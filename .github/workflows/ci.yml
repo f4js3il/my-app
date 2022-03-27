@@ -25,7 +25,7 @@ jobs:
               run: npm build
             - name: Deploy to Stage
               if: github.event_name == 'push'
-              run: npx surge --project ./build --domain purring-meal.surge.sh
+              run: npx surge --project ./build --domain purring-meal.surge.sh --token ${{secrets.SURGE_TOKEN}}
               env:
                   SURGE_LOGIN: ${{secrets.SURGE_LOGIN}}
                   SURGE_TOKEN: ${{secrets.SURGE_TOKEN}}
