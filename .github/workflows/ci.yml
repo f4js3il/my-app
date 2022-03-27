@@ -25,7 +25,9 @@ jobs:
                   CI: true
             - name: Build Project
               if: github.event_name == 'push'
-              run: npm build
+              run: |
+                npm install -g surge
+                npm build
             - name: Deploy to Stage
               if: github.event_name == 'push'
-              run: npx surge --project ./build --domain purring-meal.surge.sh
+              run: surge --project ./build --domain purring-meal.surge.sh --token ${{ secrets.SURGE_TOKEN }}
