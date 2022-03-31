@@ -2,13 +2,13 @@ name: Hello World
 author: Shalu
 description: simple hellow world action
 inputs:
-  who-to-greet: 
-    description: 'who to greet'
-    required: true
-    default: Shalu
+    who-to-greet:
+        description: 'who to greet'
+        required: true
+        default: Shalu
 outputs:
-  time:
-    description: 'The greeting time'
+    time:
+        description: 'The greeting time'
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+    using: 'node16'
+    main: 'dist/index.js'
